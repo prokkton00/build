@@ -5,11 +5,6 @@ jobs:
     image: apon77/aosp:cirrus
     resource_class: large
 
-   Storage_Checker:
-    - df -h
-    - lsblk
-    - ls -l -a -h
-
   Sync_script:
     - bash sync.sh
 
