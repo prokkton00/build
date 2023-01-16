@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Change to the Source Directory
-cd $SYNC_PATH
+cd $HOME/work
 
 # Display a message
 echo "============================"
@@ -9,10 +9,10 @@ echo "Uploading the Build..."
 echo "============================"
 
 # Change to the Output Directory
-cd out/target/product/${DEVICE}
+cd out/target/product/lmi
 
 # Set FILENAME var
-FILENAME=$(echo $OUTPUT)
+FILENAME=evolution*.zip
 
 # Upload to oshi.at
 if [ -z "$TIMEOUT" ];then
