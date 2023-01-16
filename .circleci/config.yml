@@ -1,18 +1,34 @@
 version: 2.1
 
+env:
+  MANIFEST: https://github.com/Evolution-X/manifest.git
+  MANIFEST_BRANCH: tiramisu
+  DEVICE: lmi
+  OEM: xiaomi
+  DT_LINK: https://github.com/parikk/device_xiaomi_lmi.git -b 13-evox
+  DT_PATH: device/$OEM/$DEVICE
+  VT_LINK: https://github.com/parikk/vendor_xiaomi_lmi.git -b 13-evox
+  VT_PATH: vendor/$OEM/$DEVICE
+  KT_LINK: https://github.com/ProjectElixir-Devices/kernel_xiaomi_lmi.git -b zen_plus-13
+  KT_PATH: kernel/$OEM/$DEVICE
+  LUNCH_COMBO: evolution_lmi-user
+  TARGET: evolution
+  OUTPUT: evolution*.zip
+
+  # Not Recommended to Change
+  SYNC_PATH: $HOME/work # Do NOT use "~". Use $HOME instead.
+  CCACHE_SIZE: 30G
+  CCACHE_DIR: $HOME/work/.ccache
+  J_VAL: 16
+
 jobs:
   build:
     docker:
       - image: ghcr.io/sushrut1101/docker:latest
 
-    resource_class: 2xlarge
+    resource_class: large
     steps:
       - checkout
-
-      - run:
-          name: Source Vars
-          command: |
-            source vars.sh
 
       - run:
           name: Sync
