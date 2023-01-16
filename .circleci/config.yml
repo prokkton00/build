@@ -5,12 +5,18 @@ jobs:
     image: apon77/aosp:cirrus
     resource_class: large
 
-  Sync_script:
-    - bash sync.sh
-
-  Build_script:
-    - bash build.sh
-
-  Upload_script:
-    - export TIMEOUT=43200 # Download Link Timeout (in Minutes)
-    - bash upload.sh
+  steps:
+      - checkout
+      - run:
+          name: Sync
+          command: |
+            bash sync.sh
+      - run:
+          name: Build
+          command: |
+            bash build.sh
+      - run:
+          name: Upload
+          command: |
+            export TIMEOUT=43200
+            bash upload.sh
