@@ -7,17 +7,18 @@ mkdir -p $SYNC_PATH
 cd $SYNC_PATH
 
 # Init Repo
-repo init --depth=1 -u $MANIFEST -b $MANIFEST_BRANCH
+repo init -u $MANIFEST -b $MANIFEST_BRANCH --depth=1
 
 # Sync the Sources
-repo sync -j$(nproc --all) --force-sync --no-tags --no-clone-bundle
+repo sync -c -j$(nproc --all) --force-sync --no-clone-bundle --no-tags
 
 # Clone Trees
-git clone --single-branch --depth=1 $DT_LINK $DT_PATH || { echo "ERROR: Failed to Clone the Device Trees!" && exit 1; }
-git clone --single-branch --depth=1 $DCT_LINK $DCT_PATH
-git clone --single-branch --depth=1 $VT_LINK $VT_PATH
-git clone --single-branch --depth=1 $VCT_LINK $VCT_PATH
-git clone --single-branch --depth=1 $KT_LINK $KT_PATH
+git clone --depth=1 $DT_LINK $DT_PATH || { echo "ERROR: Failed to Clone the Device Trees!" && exit 1; }
+git clone --depth=1 $VT_LINK $VT_PATH
+git clone --depth=1 $KT_LINK $KT_PATH
+
+# Custom
+git clone --depth=1 https://gitlab.com/Roxor-007/WeebX_clang16.git -b main prebuilts/clang/host/linux-x86/clang-weebx
 
 # Exit
 exit 0
