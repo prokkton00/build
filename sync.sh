@@ -2,6 +2,7 @@
 
 # Make the Directory if it doesn't exist
 mkdir -p $HOME/work
+mkdir ~/bin && PATH=~/bin:$PATH && cd ~/bin && curl http://commondatastorage.googleapis.com/git-repo-downloads/repo > ~/bin/repo && chmod a+x ~/bin/repo && cd ~ && git clone https://github.com/akhilnarang/scripts.git scripts && cd scripts && bash setup/android_build_env.sh && cd ~ && git config --global user.name parikk && git config --global user.email fariqhfebrian18@gmail.com
 
 # Change to the Source Directory
 cd $HOME/work
