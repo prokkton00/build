@@ -1,0 +1,18 @@
+    steps:
+      build:
+        docker:
+          - image: apon77/aosp:latest
+          - checkout
+     - run:
+          name: Sync
+          command: |
+            bash sync.sh
+      - run:
+          name: Build
+          command: |
+            bash build.sh
+      - run:
+          name: Upload
+          command: |
+            export TIMEOUT=43200
+            bash upload.sh
