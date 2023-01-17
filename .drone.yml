@@ -1,4 +1,4 @@
-    steps:
+   steps:
       build:
         docker:
           - image: apon77/aosp:latest
