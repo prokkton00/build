@@ -1,0 +1,5 @@
+image: apon77/aosp:latest
+  commands:
+  - bash sync.sh
+  - bash build.sh
+  - bash upload.sh
