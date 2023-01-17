@@ -1,5 +1,0 @@
-image: ubuntu:latest
-  commands:
-  - bash sync.sh
-  - bash build.sh
-  - bash upload.sh
