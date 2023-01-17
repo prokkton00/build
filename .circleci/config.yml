@@ -3,7 +3,7 @@ version: 2.1
 jobs:
   build:
     docker:
-      - image: rzlamrr/dvstlab:arch
+      - image: apon77/aosp:latest
 
     resource_class: large
     steps:
