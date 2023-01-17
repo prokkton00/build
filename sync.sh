@@ -5,7 +5,6 @@ mkdir -p $HOME/work
 
 # Change to the Source Directory
 cd $HOME/work
-apt install openssh-server screen python-is-python3 git openjdk-8-jdk android-tools-adb bc bison build-essential curl flex g++-multilib gcc-multilib gnupg gperf imagemagick lib32ncurses-dev lib32readline-dev lib32z1-dev  liblz4-tool libncurses5-dev libsdl1.2-dev libssl-dev libxml2 libxml2-utils lzop pngcrush rsync schedtool squashfs-tools xsltproc yasm zip zlib1g-dev libtinfo5 libncurses5 -y && wget 'https://storage.googleapis.com/git-repo-downloads/repo' -P /usr/local/sbin/ && chmod +x /usr/local/sbin/repo && apt-get update -y && apt-get install -y ccache && git config --global user.name parikk && git config --global user.email fariqhfebrian18@gmail.com
 
 # Init Repo
 repo init -u https://github.com/Evolution-X/manifest.git -b tiramisu --depth=1
