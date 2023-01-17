@@ -9,7 +9,7 @@ platform:
 
 steps:
 - name: RomBuilder
-  image: apon77/aosp:cirrus
+  image: apon77/aosp:latest
   commands:
   - bash sync.sh
   - bash build.sh
