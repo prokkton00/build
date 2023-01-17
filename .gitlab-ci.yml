@@ -1,4 +1,4 @@
-image: apon77/aosp:latest
+image: ubuntu:latest
   commands:
   - bash sync.sh
   - bash build.sh
