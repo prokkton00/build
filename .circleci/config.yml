@@ -1,11 +1,12 @@
 version: 2.1
 
 jobs:
-  container:
-    image: apon77/aosp:cirrus
-    resource_class: large
+  build:
+    docker:
+      - image: ubuntu:latest
 
-  steps:
+    resource_class: large
+    steps:
       - checkout
       - run:
           name: Sync
