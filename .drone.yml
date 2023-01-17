@@ -1,18 +1,16 @@
-   steps:
-      build:
-        docker:
-          - image: apon77/aosp:latest
-          - checkout
-     - run:
-          name: Sync
-          command: |
-            bash sync.sh
-      - run:
-          name: Build
-          command: |
-            bash build.sh
-      - run:
-          name: Upload
-          command: |
-            export TIMEOUT=43200
-            bash upload.sh
+---
+kind: pipeline
+type: docker
+name: linux-amd64
+
+platform:
+  arch: amd64
+  os: linux
+
+steps:
+- name: RomBuilder
+  image: apon77/aosp:cirrus
+  commands:
+  - bash sync.sh
+  - bash build.sh
+  - bash upload.sh
