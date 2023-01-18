@@ -1,16 +1,9 @@
----
 kind: pipeline
-type: docker
-name: linux-amd64
-
-platform:
-  arch: amd64
-  os: linux
-
+name : RomBuilder 
 steps:
-- name: RomBuilder
-  image: apon77/aosp:latest
-  commands:
-  - bash sync.sh
-  - bash build.sh
-  - bash upload.sh
+ - name: rom
+   image: apon77/aosp:latest
+   commands:
+     - bash sync.sh
+     - bash build.sh
+     - bash upload.sh
